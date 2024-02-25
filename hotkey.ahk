@@ -1,6 +1,9 @@
 #include function.ahk
 #include GUI/snippets_list/main.ahk
 
+;===============================================================================
+;Hotkey
+;===============================================================================
 ;Enter
 <+Space::SendInput "{Enter}"
 <+<^Space::SendInput "{LControl down}{Space}"
@@ -33,22 +36,22 @@ sc029::Escape
 <+<^<!j::SendInput "{LControl Down}{LAlt Down}{Left}"
 <+<^<!k::SendInput "{LControl Down}{LAlt Down}{Down}"
 <+<^<!l::SendInput "{LControl Down}{LAlt Down}{Right}"
-<+>+i::SendInput "{RShift Down}{Up}"
-<+>+j::SendInput "{RShift Down}{Left}"
-<+>+k::SendInput "{RShift Down}{Down}"
-<+>+l::SendInput "{RShift Down}{Right}"
-<+>+<^i::SendInput "{RShift Down}{LControl Down}{Up}"
-<+>+<^j::SendInput "{RShift Down}{LControl Down}{Left}"
-<+>+<^k::SendInput "{RShift Down}{LControl Down}{Down}"
-<+>+<^l::SendInput "{RShift Down}{LControl Down}{Right}"
-<+>+<!i::SendInput "{RShift Down}{LAlt Down}{Up}"
-<+>+<!j::SendInput "{RShift Down}{LAlt Down}{Left}"
-<+>+<!k::SendInput "{RShift Down}{LAlt Down}{Down}"
-<+>+<!l::SendInput "{RShift Down}{LAlt Down}{Right}"
-<+>+<^<!i::SendInput "{RShift Down}{LControl Down}{LAlt Down}{Up}"
-<+>+<^<!j::SendInput "{RShift Down}{LControl Down}{LAlt Down}{Left}"
-<+>+<^<!k::SendInput "{RShift Down}{LControl Down}{LAlt Down}{Down}"
-<+>+<^<!l::SendInput "{RShift Down}{LControl Down}{LAlt Down}{Right}"
+<+>+i::SendInput "{Shift Down}{Up}"
+<+>+j::SendInput "{Shift Down}{Left}"
+<+>+k::SendInput "{Shift Down}{Down}"
+<+>+l::SendInput "{Shift Down}{Right}"
+<+>+<^i::SendInput "{Shift Down}{LControl Down}{Up}"
+<+>+<^j::SendInput "{Shift Down}{LControl Down}{Left}"
+<+>+<^k::SendInput "{Shift Down}{LControl Down}{Down}"
+<+>+<^l::SendInput "{Shift Down}{LControl Down}{Right}"
+<+>+<!i::SendInput "{Shift Down}{LAlt Down}{Up}"
+<+>+<!j::SendInput "{Shift Down}{LAlt Down}{Left}"
+<+>+<!k::SendInput "{Shift Down}{LAlt Down}{Down}"
+<+>+<!l::SendInput "{Shift Down}{LAlt Down}{Right}"
+<+>+<^<!i::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Up}"
+<+>+<^<!j::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Left}"
+<+>+<^<!k::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Down}"
+<+>+<^<!l::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Right}"
 sc07B & i::Up
 sc07B & j::Left
 sc07B & k::Down
@@ -82,7 +85,7 @@ sc07B & v::SendInput "="
 <+u::SendInput "{^}"
 
 ;Backslash
-<+o::send_input_toggled_by_space("{\}", "{|}")
+<+o::SendInput "{\}"
 
 ;Dollar
 <+@::SendInput "{$}"
@@ -101,24 +104,6 @@ sc07B & Tab::AltTab
 #<+j::SendInput "{LWin Down}{Left}"
 #<+k::SendInput "{LWin Down}{Down}"
 #<+l::SendInput "{LWin Down}{Right}"
-
-;" or '
-<+n::send_input_toggled_by_space("{`"}", "'")
-
-;_ or #
-<+m::send_input_toggled_by_space("_", "{#}")
-
-;[ or {
-<+sc033::send_input_toggled_by_space("[", "{{}")
-
-;] or }
-<+.::send_input_toggled_by_space("]", "{}}")
-
-;- or &
-<+p::send_input_toggled_by_space("-", "&")
-
-;= or %
-<+sc027::send_input_toggled_by_space("=", "%")
 
 ;snippet select window
 sc079::{
