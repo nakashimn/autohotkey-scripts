@@ -14,7 +14,7 @@ class AwsSnippetSelector extends SnippetSelector {
     ],
     snippets := [
       "aws ssm start-session --target " . instance_id . " --region " . region . " --profile " . profile,
-      "aws s3 cp <src> <tgt>"
+      "aws s3 cp <src> <tgt> --profile " . profile
     ]
 
     super.__init(keywords, snippets)
