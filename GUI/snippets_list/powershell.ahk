@@ -2,13 +2,15 @@
 
 class PowerShellSnippetSelector extends SnippetSelector {
   __init() {
-    super.__init(
-      keywords:= [
-        "symlink"
-      ],
-      snippets := [
-        "New-Item -ItemType SymbolicLink -Path <path> -Target <target>"
-      ]
-    )
+
+    ; describe snippets
+    keywords:= [
+      "symlink"
+    ],
+    snippets := [
+      "New-Item -ItemType SymbolicLink -Path <path> -Target <tgt>"
+    ]
+
+    super.__init(keywords, snippets)
   }
 }

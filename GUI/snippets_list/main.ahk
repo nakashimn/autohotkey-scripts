@@ -1,18 +1,21 @@
 #include aws.ahk
 #include mysql.ahk
+#include password.local.ahk
 #include powershell.ahk
 
 class TargetSelector {
   __init() {
     this.targets := [
-      "MySQL",
       "AWS",
-      "PowerShell"
+      "MySQL",
+      "PowerShell",
+      "Password"
     ],
     this.snippet_selectors := [
-      MysqlSnippetSelector(),
       AwsSnippetSelector(),
+      MysqlSnippetSelector(),
       PowerShellSnippetSelector(),
+      PasswordSnippetSelectorLocal()
     ]
     this.window := Gui()
     this.Window.Opt("-Border")

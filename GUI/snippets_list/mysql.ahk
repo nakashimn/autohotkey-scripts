@@ -2,15 +2,21 @@
 
 class MysqlSnippetSelector extends SnippetSelector {
   __init() {
-    super.__init(
-      keywords:= [
-        "mysql login",
-        "mysql export"
-      ],
-      snippets := [
-        "mysql -h <host> -u <user> -P <port> -p",
-        "mysql -h <host> -u <user> -P <port> -p -e <query> | sed -e 's/\t/,/g' > <csvfile>"
-      ]
-    )
+    ; set local variables
+    host := IniRead("settings.local.ini", "MySQL", "host", "<host>")
+    user := IniRead("settings.local.ini", "MySQL", "user", "<user>")
+    port := IniRead("settings.local.ini", "MySQL", "port", "<port>")
+
+    ; describe snippets
+    keywords:= [
+      "mysql login",
+      "mysql export"
+    ],
+    snippets := [
+      "mysql -h " . host . " -u " . user . " -P " . port . " -p",
+      "mysql -h " . host . " -u " . user . " -P " . port . " -p -e `"<query>`" | sed -e `"s/\t/,/g`" > <csv>"
+    ]
+
+    super.__init(keywords, snippets)
   }
 }
