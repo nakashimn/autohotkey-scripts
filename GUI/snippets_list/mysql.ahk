@@ -9,7 +9,7 @@ class MysqlSnippetSelector extends SnippetSelector {
       ],
       snippets := [
         "mysql -h <host> -u <user> -P <port> -p",
-        "mysql -h <host> -u <user> -P <port> -p -e <query> | sed /s\t/,/g > <csvfile>"
+        "mysql -h <host> -u <user> -P <port> -p -e <query> | sed 's/\t/,/g' > <csvfile>"
       ]
     )
   }
