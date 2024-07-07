@@ -9,7 +9,7 @@ class TargetSelector {
       "AWS",
       "MySQL",
       "PowerShell",
-      "Password"
+      "Password",
     ],
     this.snippet_selectors := [
       AwsSnippetSelector(),

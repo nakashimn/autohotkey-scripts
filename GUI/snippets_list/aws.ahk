@@ -6,14 +6,17 @@ class AwsSnippetSelector extends SnippetSelector {
     instance_id := IniRead("settings.local.ini", "AWS", "instance_id", "<ins_id>")
     region := IniRead("settings.local.ini", "AWS", "region", "<region>")
     profile := IniRead("settings.local.ini", "AWS", "profile", "default")
+    ssm_role := IniRead("settings.local.ini", "AWS", "ssm_role", "<ssm_role>")
 
     ; describe snippets
     keywords:= [
       "ssm",
+      "ssm activate",
       "s3 copy"
     ],
     snippets := [
       "aws ssm start-session --target " . instance_id . " --region " . region . " --profile " . profile,
+      "aws ssm create-activation --default-instance-name <instance_name> --iam-role " . ssm_role . " --registration-limit 1 --region " . region " --profile " . profile,
       "aws s3 cp <src> <tgt> --profile " . profile
     ]
 
