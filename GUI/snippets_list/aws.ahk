@@ -10,11 +10,13 @@ class AwsSnippetSelector extends SnippetSelector {
 
     ; describe snippets
     keywords:= [
-      "ssm",
-      "ssm activate",
-      "s3 copy"
+      "aws mfa",
+      "aws ssm",
+      "aws ssm activate",
+      "aws s3 copy"
     ],
     snippets := [
+      "aws-mfa --profile "
       "aws ssm start-session --target " . instance_id . " --region " . region . " --profile " . profile,
       "aws ssm create-activation --default-instance-name <instance_name> --iam-role " . ssm_role . " --registration-limit 1 --region " . region " --profile " . profile,
       "aws s3 cp <src> <tgt> --profile " . profile

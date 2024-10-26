@@ -1,4 +1,5 @@
 #include aws.ahk
+#include terraform.ahk
 #include mysql.ahk
 #include password.local.ahk
 #include powershell.ahk
@@ -7,12 +8,14 @@ class TargetSelector {
   __init() {
     this.targets := [
       "AWS",
+      "Terraform",
       "MySQL",
       "PowerShell",
       "Password",
     ],
     this.snippet_selectors := [
       AwsSnippetSelector(),
+      TerraformSnippetSelector(),
       MysqlSnippetSelector(),
       PowerShellSnippetSelector(),
       PasswordSnippetSelectorLocal()
