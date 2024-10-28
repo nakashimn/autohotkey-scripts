@@ -12,7 +12,7 @@ class TerraformSnippetSelector extends SnippetSelector {
       "terraform apply"
     ],
     snippets := [
-      "terraform init -reconfigure -backend-config ./terraform/",
+      "terraform init -reconfigure -backend-config ./terraform_conf/",
       "terraform init -upgrade",
       "terraform plan -var-file ./tfvars/",
       "terraform apply -var-file ./tfvars/"
