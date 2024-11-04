@@ -24,38 +24,56 @@ sc029::Escape
 <+j::SendInput "{Left}"
 <+k::SendInput "{Down}"
 <+l::SendInput "{Right}"
+<+u::SendInput "{PgUp}"
+<+o::SendInput "{PgDn}"
 <+<^i::SendInput "{LControl Down}{Up}"
 <+<^j::SendInput "{LControl Down}{Left}"
 <+<^k::SendInput "{LControl Down}{Down}"
 <+<^l::SendInput "{LControl Down}{Right}"
+<+<^u::SendInput "{LControl Down}{PgUp}"
+<+<^o::SendInput "{LControl Down}{PgDn}"
 <+<!i::SendInput "{LAlt Down}{Up}"
 <+<!j::SendInput "{LAlt Down}{Left}"
 <+<!k::SendInput "{LAlt Down}{Down}"
 <+<!l::SendInput "{LAlt Down}{Right}"
+<+<!u::SendInput "{LAlt Down}{PgUp}"
+<+<!o::SendInput "{LAlt Down}{PgDn}"
 <+<^<!i::SendInput "{LControl Down}{LAlt Down}{Up}"
 <+<^<!j::SendInput "{LControl Down}{LAlt Down}{Left}"
 <+<^<!k::SendInput "{LControl Down}{LAlt Down}{Down}"
 <+<^<!l::SendInput "{LControl Down}{LAlt Down}{Right}"
+<+<^<!u::SendInput "{LControl Down}{LAlt Down}{PgUp}"
+<+<^<!o::SendInput "{LControl Down}{LAlt Down}{PgDn}"
 <+>+i::SendInput "{Shift Down}{Up}"
 <+>+j::SendInput "{Shift Down}{Left}"
 <+>+k::SendInput "{Shift Down}{Down}"
 <+>+l::SendInput "{Shift Down}{Right}"
+<+>+u::SendInput "{Shift Down}{PgUp}"
+<+>+o::SendInput "{Shift Down}{PgDn}"
 <+>+<^i::SendInput "{Shift Down}{LControl Down}{Up}"
 <+>+<^j::SendInput "{Shift Down}{LControl Down}{Left}"
 <+>+<^k::SendInput "{Shift Down}{LControl Down}{Down}"
 <+>+<^l::SendInput "{Shift Down}{LControl Down}{Right}"
+<+>+<^u::SendInput "{Shift Down}{LControl Down}{PgUp}"
+<+>+<^o::SendInput "{Shift Down}{LControl Down}{PgDn}"
 <+>+<!i::SendInput "{Shift Down}{LAlt Down}{Up}"
 <+>+<!j::SendInput "{Shift Down}{LAlt Down}{Left}"
 <+>+<!k::SendInput "{Shift Down}{LAlt Down}{Down}"
 <+>+<!l::SendInput "{Shift Down}{LAlt Down}{Right}"
+<+>+<!u::SendInput "{Shift Down}{LAlt Down}{PgUp}"
+<+>+<!o::SendInput "{Shift Down}{LAlt Down}{PgDn}"
 <+>+<^<!i::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Up}"
 <+>+<^<!j::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Left}"
 <+>+<^<!k::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Down}"
 <+>+<^<!l::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Right}"
+<+>+<^<!u::SendInput "{Shift Down}{LControl Down}{LAlt Down}{PgUp}"
+<+>+<^<!o::SendInput "{Shift Down}{LControl Down}{LAlt Down}{PgDn}"
 sc07B & i::Up
 sc07B & j::Left
 sc07B & k::Down
 sc07B & l::Right
+sc07B & u::Browser_Back
+sc07B & o::Browser_Forward
 
 ;Nunber
 sc07B & q::SendInput 4
@@ -72,20 +90,11 @@ sc07B & r::SendInput "-"
 sc07B & f::SendInput "*"
 sc07B & v::SendInput "="
 
-;PageUp
-<+<^u::SendInput "{LControl Down}{PgUp}"
-
-;PageDown
-<+<^o::SendInput "{LControl Down}{PgDn}"
-
 ;Home
 <+h::SendInput "{Home}"
 
-;Caret
-<+u::SendInput "{^}"
-
 ;Backslash
-<+o::SendInput "{\}"
+<+/::SendInput "{\}"
 
 ;Dollar
 <+@::SendInput "{$}"
