@@ -72,23 +72,6 @@ sc07B & i::Up
 sc07B & j::Left
 sc07B & k::Down
 sc07B & l::Right
-sc07B & u::Browser_Back
-sc07B & o::Browser_Forward
-
-;Nunber
-sc07B & q::SendInput 4
-sc07B & w::SendInput 5
-sc07B & e::SendInput 6
-sc07B & a::SendInput 7
-sc07B & s::SendInput 8
-sc07B & d::SendInput 9
-sc07B & x::SendInput 0
-sc07B & z::SendInput "/"
-sc07B & c::SendInput "."
-sc07B & 4::SendInput "{+}"
-sc07B & r::SendInput "-"
-sc07B & f::SendInput "*"
-sc07B & v::SendInput "="
 
 ;Home
 <+h::SendInput "{Home}"
@@ -147,11 +130,30 @@ SandS_AnyKeyPressed := 0
   SendInput "{RShift Up}"
   SandS_SpaceDown := 0
   if (SandS_AnyKeyPressed == 0) {
-    if GetKeyState("LControl", "P"){
+    if GetKeyState("LControl", "P") {
       SendInput "{sc029}"
-    }else{
+    } else {
       SendInput "{Space}"
     }
     Send "{RControl}"
+  }
+}
+
+;===============================================================================
+;Browser
+;===============================================================================
+<^q::{
+  if WinActive("ahk_exe chrome.exe") {
+    SendInput "{Browser_Back}"
+  } else {
+    SendInput "{LControl Down}q"
+  }
+}
+
+<^y::{
+  if WinActive("ahk_exe chrome.exe") {
+    SendInput "{Browser_Forward}"
+  } else {
+    SendInput "{LControl Down}y"
   }
 }

@@ -19,6 +19,15 @@ run_app(filepath, workdir:="", options:="") {
   return
 }
 
+open_page_in_chrome(url) {
+  if WinExist("ahk_exe chrome.exe") {
+    Run("chrome.exe --new-tab " url)
+    return true
+  } else {
+    return false
+  }
+}
+
 pop_tool_tip(text, msec) {
   ToolTip(text)
   SetTimer () => ToolTip(), -msec
