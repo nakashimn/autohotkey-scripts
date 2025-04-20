@@ -2,6 +2,8 @@
 
 class LinuxSnippetSelector extends SnippetSelector {
   __init() {
+    ; set local variables
+    mail_address := IniRead("settings.local.ini", "Linux", "mail_address", "<mail_address>")
 
     ; describe snippets
     keywords:= [
@@ -11,6 +13,7 @@ class LinuxSnippetSelector extends SnippetSelector {
       "vmstat",
       "ping",
       "dig",
+      "ssh-keygen",
       "openssl generate rsa",
       "openssl generate rsa(nocrypt)",
       "tar zip",
@@ -23,6 +26,7 @@ class LinuxSnippetSelector extends SnippetSelector {
       "vmstat -w -t 1 -SM",
       "ping google.com",
       "dig google.com +short",
+      "ssh-keygen -t rsa -b 4096 -C " . mail_address . " -f ssh_key",
       "openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 && openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub",
       "openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -nocrypt && openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub",
       "tar -zcvf <dst> <src>",
