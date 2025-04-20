@@ -3,6 +3,7 @@
 #include linux.ahk
 #include mysql.ahk
 #include password.local.ahk
+#include phrase.local.ahk
 #include powershell.ahk
 
 class TargetSelector {
@@ -14,6 +15,7 @@ class TargetSelector {
       "MySQL",
       "PowerShell",
       "Password",
+      "Phrase"
     ],
     this.snippet_selectors := [
       AwsSnippetSelector(),
@@ -21,7 +23,8 @@ class TargetSelector {
       LinuxSnippetSelector(),
       MysqlSnippetSelector(),
       PowerShellSnippetSelector(),
-      PasswordSnippetSelectorLocal()
+      PasswordSnippetSelectorLocal(),
+      PhraseSnippetSelectorLocal()
     ]
     this.window := Gui()
     this.Window.Opt("-Border")
