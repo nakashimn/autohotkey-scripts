@@ -5,6 +5,7 @@
 ::cmp::dbt compile --target dev --target-path target_dev
 ::run::dbt run-operation
 ::def::dbt build --select "state:modified" --defer --state target
+::dex::dbt run-operation stage_external_sources --vars "ext_full_refresh: true" --args "select: "
 
 ;git
 ::gp::git pull

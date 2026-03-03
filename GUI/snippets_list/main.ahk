@@ -9,22 +9,22 @@
 class TargetSelector {
   __init() {
     this.targets := [
+      "Phrase",
       "AWS",
       "Terraform",
       "linux",
       "MySQL",
       "PowerShell",
-      "Password",
-      "Phrase"
+      "Password"
     ],
     this.snippet_selectors := [
+      PhraseSnippetSelectorLocal(),
       AwsSnippetSelector(),
       TerraformSnippetSelector(),
       LinuxSnippetSelector(),
       MysqlSnippetSelector(),
       PowerShellSnippetSelector(),
-      PasswordSnippetSelectorLocal(),
-      PhraseSnippetSelectorLocal()
+      PasswordSnippetSelectorLocal()
     ]
     this.window := Gui()
     this.Window.Opt("-Border")
