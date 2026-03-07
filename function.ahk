@@ -15,7 +15,18 @@ run_app(filepath, workdir:="", options:="") {
     WinActivate("ahk_pid" pid)
     return
   }
+
   Run(filepath, workdir, options)
+  return
+}
+
+run_chrome_app(app_id, title_keyword:="dummy_keyword") {
+  if WinExist(title_keyword " ahk_exe chrome") {
+    WinActivate()
+    return
+  }
+
+  Run("chrome.exe --app-id=" app_id)
   return
 }
 
