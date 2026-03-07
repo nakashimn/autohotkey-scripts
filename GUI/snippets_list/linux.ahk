@@ -24,7 +24,7 @@ class LinuxSnippetSelector extends SnippetSelector {
       "scp -r <src> <user>@<id_address>:<dst>",
       'find -name "*.md" ',
       "chmod -R 777 ",
-      "ln -s <src> <dst>"
+      "ln -s <src> <dst>",
       "vmstat -w -t 1 -SM",
       "ping google.com",
       "dig google.com +short",

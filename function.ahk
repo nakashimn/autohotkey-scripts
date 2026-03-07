@@ -16,12 +16,12 @@ run_app(filepath, workdir:="", options:="") {
     return
   }
 
-  Run(filepath, workdir, options)
+   Run(filepath, workdir, options)
   return
 }
 
 run_chrome_app(app_id, title_keyword:="dummy_keyword") {
-  if WinExist(title_keyword " ahk_exe chrome") {
+  if WinExist(title_keyword " ahk_exe chrome.exe") {
     WinActivate()
     return
   }
