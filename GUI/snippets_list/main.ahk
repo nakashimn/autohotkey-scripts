@@ -1,31 +1,19 @@
 #Include target_selector_base.ahk
-#include aws.ahk
-#include terraform.ahk
-#include linux.ahk
-#include mysql.ahk
 #include password.local.ahk
 #include phrase.local.ahk
-#include powershell.ahk
+#include command_selector.ahk
 
 class TargetSelector extends TargetSelectorBase {
   __init() {
     targets := [
       "Phrase",
-      "AWS",
-      "Terraform",
-      "linux",
-      "MySQL",
-      "PowerShell",
-      "Password"
+      "Password",
+      "Command"
     ],
     snippet_selectors := [
       PhraseSnippetSelectorLocal(),
-      AwsSnippetSelector(),
-      TerraformSnippetSelector(),
-      LinuxSnippetSelector(),
-      MysqlSnippetSelector(),
-      PowerShellSnippetSelector(),
-      PasswordSnippetSelectorLocal()
+      PasswordSnippetSelectorLocal(),
+      CommandSelector()
     ]
 
     super.__init(targets, snippet_selectors)
