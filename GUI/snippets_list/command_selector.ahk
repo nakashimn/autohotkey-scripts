@@ -3,6 +3,7 @@
 #include terraform.ahk
 #include linux.ahk
 #include mysql.ahk
+#include postgresql.ahk
 #include powershell.ahk
 
 class CommandSelector extends TargetSelectorBase {
@@ -11,6 +12,7 @@ class CommandSelector extends TargetSelectorBase {
       "AWS",
       "Terraform",
       "linux",
+      "PostgreSQL",
       "MySQL",
       "PowerShell"
     ],
@@ -18,6 +20,7 @@ class CommandSelector extends TargetSelectorBase {
       AwsSnippetSelector(),
       TerraformSnippetSelector(),
       LinuxSnippetSelector(),
+      PostgresqlSnippetSelector(),
       MysqlSnippetSelector(),
       PowerShellSnippetSelector()
     ]

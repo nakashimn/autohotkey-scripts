@@ -18,7 +18,8 @@ class LinuxSnippetSelector extends SnippetSelector {
       "openssl generate rsa",
       "openssl generate rsa(nocrypt)",
       "tar zip",
-      "tar unzip"
+      "tar unzip",
+      "gzip"
     ],
     snippets := [
       "scp -r <src> <user>@<id_address>:<dst>",
@@ -32,7 +33,8 @@ class LinuxSnippetSelector extends SnippetSelector {
       "openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 && openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub",
       "openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8 -nocrypt && openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub",
       "tar -zcvf <dst> <src>",
-      "tar -zxvf <src> -C <dst>"
+      "tar -zxvf <src> -C <dst>",
+      "gzip -k <src>"
     ]
 
     super.__init(keywords, snippets)
