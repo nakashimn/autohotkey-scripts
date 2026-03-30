@@ -4,6 +4,13 @@
 ;===============================================================================
 ;Hotkey
 ;===============================================================================
+;click
+<^m::Click "Left"
+sc070::Click "Left"
+<^sc033::Click "Right"
+<^.::Click "Right"
+AppsKey::Click "Right"
+
 ;Enter
 <+Space::SendInput "{Enter}"
 <+<^Space::SendInput "{LControl down}{Space}"
