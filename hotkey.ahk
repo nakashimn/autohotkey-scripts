@@ -20,74 +20,52 @@ sc07B & Space::SendInput "{Enter}"
 sc028::BackSpace
 
 ;Delete
-<+]::Send "{LShift TempUp}{Delete}"
+[::Delete
 
 ;Escape
 sc029::Escape
-<+w::Escape
+]::Escape
 
 ;Cursor
 <+i::SendInput "{Up}"
 <+j::SendInput "{Left}"
 <+k::SendInput "{Down}"
 <+l::SendInput "{Right}"
-<+u::SendInput "{PgUp}"
-<+o::SendInput "{PgDn}"
 <+<^i::SendInput "{LControl Down}{Up}"
 <+<^j::SendInput "{LControl Down}{Left}"
 <+<^k::SendInput "{LControl Down}{Down}"
 <+<^l::SendInput "{LControl Down}{Right}"
-<+<^u::SendInput "{LControl Down}{PgUp}"
-<+<^o::SendInput "{LControl Down}{PgDn}"
 <+<!i::SendInput "{LAlt Down}{Up}"
 <+<!j::SendInput "{LAlt Down}{Left}"
 <+<!k::SendInput "{LAlt Down}{Down}"
 <+<!l::SendInput "{LAlt Down}{Right}"
-<+<!u::SendInput "{LAlt Down}{PgUp}"
-<+<!o::SendInput "{LAlt Down}{PgDn}"
 <+<^<!i::SendInput "{LControl Down}{LAlt Down}{Up}"
 <+<^<!j::SendInput "{LControl Down}{LAlt Down}{Left}"
 <+<^<!k::SendInput "{LControl Down}{LAlt Down}{Down}"
 <+<^<!l::SendInput "{LControl Down}{LAlt Down}{Right}"
-<+<^<!u::SendInput "{LControl Down}{LAlt Down}{PgUp}"
-<+<^<!o::SendInput "{LControl Down}{LAlt Down}{PgDn}"
 <+>+i::SendInput "{Shift Down}{Up}"
 <+>+j::SendInput "{Shift Down}{Left}"
 <+>+k::SendInput "{Shift Down}{Down}"
 <+>+l::SendInput "{Shift Down}{Right}"
-<+>+u::SendInput "{Shift Down}{PgUp}"
-<+>+o::SendInput "{Shift Down}{PgDn}"
 <+>+<^i::SendInput "{Shift Down}{LControl Down}{Up}"
 <+>+<^j::SendInput "{Shift Down}{LControl Down}{Left}"
 <+>+<^k::SendInput "{Shift Down}{LControl Down}{Down}"
 <+>+<^l::SendInput "{Shift Down}{LControl Down}{Right}"
-<+>+<^u::SendInput "{Shift Down}{LControl Down}{PgUp}"
-<+>+<^o::SendInput "{Shift Down}{LControl Down}{PgDn}"
 <+>+<!i::SendInput "{Shift Down}{LAlt Down}{Up}"
 <+>+<!j::SendInput "{Shift Down}{LAlt Down}{Left}"
 <+>+<!k::SendInput "{Shift Down}{LAlt Down}{Down}"
 <+>+<!l::SendInput "{Shift Down}{LAlt Down}{Right}"
-<+>+<!u::SendInput "{Shift Down}{LAlt Down}{PgUp}"
-<+>+<!o::SendInput "{Shift Down}{LAlt Down}{PgDn}"
 <+>+<^<!i::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Up}"
 <+>+<^<!j::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Left}"
 <+>+<^<!k::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Down}"
 <+>+<^<!l::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Right}"
-<+>+<^<!u::SendInput "{Shift Down}{LControl Down}{LAlt Down}{PgUp}"
-<+>+<^<!o::SendInput "{Shift Down}{LControl Down}{LAlt Down}{PgDn}"
 sc07B & i::Up
 sc07B & j::Left
 sc07B & k::Down
 sc07B & l::Right
 
-;Home
-<+h::SendInput "{Home}"
-
 ;Backslash
 <+/::SendInput "{\}"
-
-;Dollar
-<+@::SendInput "{$}"
 
 ;Coron
 <+sc028::SendInput "{sc028}"
