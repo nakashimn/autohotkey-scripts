@@ -49,6 +49,22 @@ sc029::Escape
 <+<^<!l::SendInput "{LControl Down}{LAlt Down}{Right}"
 <+<^<!u::SendInput "{LControl Down}{LAlt Down}{PgUp}"
 <+<^<!o::SendInput "{LControl Down}{LAlt Down}{PgDn}"
+<+>+i::SendInput "{Shift Down}{Up}"
+<+>+j::SendInput "{Shift Down}{Left}"
+<+>+k::SendInput "{Shift Down}{Down}"
+<+>+l::SendInput "{Shift Down}{Right}"
+<+>+<^i::SendInput "{Shift Down}{LControl Down}{Up}"
+<+>+<^j::SendInput "{Shift Down}{LControl Down}{Left}"
+<+>+<^k::SendInput "{Shift Down}{LControl Down}{Down}"
+<+>+<^l::SendInput "{Shift Down}{LControl Down}{Right}"
+<+>+<!i::SendInput "{Shift Down}{LAlt Down}{Up}"
+<+>+<!j::SendInput "{Shift Down}{LAlt Down}{Left}"
+<+>+<!k::SendInput "{Shift Down}{LAlt Down}{Down}"
+<+>+<!l::SendInput "{Shift Down}{LAlt Down}{Right}"
+<+>+<^<!i::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Up}"
+<+>+<^<!j::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Left}"
+<+>+<^<!k::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Down}"
+<+>+<^<!l::SendInput "{Shift Down}{LControl Down}{LAlt Down}{Right}"
 sc07B & i::Up
 sc07B & j::Left
 sc07B & k::Down
