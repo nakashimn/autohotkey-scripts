@@ -70,11 +70,26 @@ sc07B & j::Left
 sc07B & k::Down
 sc07B & l::Right
 
+;IME on
+$1::send_input_toggled_by_ime_and_space("1", "!", "{Text}1", "!")
+$2::send_input_toggled_by_ime_and_space("2", "`"", "{Text}2", "`"")
+$3::send_input_toggled_by_ime_and_space("3", "#", "{Text}3", "#")
+$4::send_input_toggled_by_ime_and_space("4", "$", "{Text}4", "$")
+$5::send_input_toggled_by_ime_and_space("5", "%", "{Text}5", "%")
+$6::send_input_toggled_by_ime_and_space("6", "&", "{Text}6", "&")
+$7::send_input_toggled_by_ime_and_space("7", "'", "{Text}7", "'")
+$8::send_input_toggled_by_ime_and_space("8", "(", "{Text}8", "{Text}(")
+$9::send_input_toggled_by_ime_and_space("9", ")", "{Text}9", "{Text})")
+$0::send_input_toggled_by_ime_and_space("0", "", "{Text}0", "")
+$l::send_input_toggled_by_ime_and_space("l", "L", "-", "-")
+$sc027::send_input_toggled_by_ime_and_space(";", "=", "{Text};", "{Text}=")
+$@::send_input_toggled_by_ime_and_space("@", "", "{Text}@", "")
+
 ;Backslash
 <+/::SendInput "{\}"
 
 ;Coron
-<+sc028::SendInput "{sc028}"
+<+sc028::send_input_toggled_by_ime_and_space(":", "*", "{Text}:", "{Text}*")
 
 ;Alt Tab
 sc07B & Tab::AltTab
