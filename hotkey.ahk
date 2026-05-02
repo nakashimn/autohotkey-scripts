@@ -81,15 +81,17 @@ $7::send_input_toggled_by_ime_and_space("7", "'", "{Text}7", "'")
 $8::send_input_toggled_by_ime_and_space("8", "(", "{Text}8", "{Text}(")
 $9::send_input_toggled_by_ime_and_space("9", ")", "{Text}9", "{Text})")
 $0::send_input_toggled_by_ime_and_space("0", "", "{Text}0", "")
-$l::send_input_toggled_by_ime_and_space("l", "L", "-", "-")
-$sc027::send_input_toggled_by_ime_and_space(";", "=", "{Text};", "{Text}=")
 $@::send_input_toggled_by_ime_and_space("@", "", "{Text}@", "")
+sc027::send_input_toggled_by_ime(";", "-")
+
+;x
+<+x::SendInput "{Text}x"
 
 ;Backslash
 <+/::SendInput "{\}"
 
 ;Coron
-<+sc028::send_input_toggled_by_ime_and_space(":", "*", "{Text}:", "{Text}*")
+<+sc028::send_input_toggled_by_ime_and_space(":", "*", ":", "{Text}*")
 
 ;Alt Tab
 sc07B & Tab::AltTab
