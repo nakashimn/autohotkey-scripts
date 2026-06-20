@@ -20,11 +20,11 @@ sc07B & Space::SendInput "{Enter}"
 sc028::BackSpace
 
 ;Delete
-[::Delete
+]::Delete
 
 ;Escape
 sc029::Escape
-]::Escape
+[::Escape
 
 ;Cursor
 <+i::SendInput "{Up}"
@@ -71,17 +71,17 @@ sc07B & k::Down
 sc07B & l::Right
 
 ;IME on
-$1::send_input_toggled_by_ime_and_space("1", "!", "{Text}1", "!")
-$2::send_input_toggled_by_ime_and_space("2", "`"", "{Text}2", "`"")
-$3::send_input_toggled_by_ime_and_space("3", "#", "{Text}3", "#")
-$4::send_input_toggled_by_ime_and_space("4", "$", "{Text}4", "$")
-$5::send_input_toggled_by_ime_and_space("5", "%", "{Text}5", "%")
-$6::send_input_toggled_by_ime_and_space("6", "&", "{Text}6", "&")
-$7::send_input_toggled_by_ime_and_space("7", "'", "{Text}7", "'")
-$8::send_input_toggled_by_ime_and_space("8", "(", "{Text}8", "{Text}(")
-$9::send_input_toggled_by_ime_and_space("9", ")", "{Text}9", "{Text})")
-$0::send_input_toggled_by_ime_and_space("0", "", "{Text}0", "")
-$@::send_input_toggled_by_ime_and_space("@", "", "{Text}@", "")
+$1::send_input_toggled_by_space("1", "!")
+$2::send_input_toggled_by_space("2", "`"")
+$3::send_input_toggled_by_space("3", "#")
+$4::send_input_toggled_by_space("4", "$")
+$5::send_input_toggled_by_space("5", "%")
+$6::send_input_toggled_by_space("6", "&")
+$7::send_input_toggled_by_space("7", "'")
+$8::send_input_toggled_by_space("8", "(")
+$9::send_input_toggled_by_space("9", ")")
+$0::send_input_toggled_by_space("0", "")
+$@::send_input_toggled_by_space("@", "")
 
 ;x
 <+x::SendInput "{Text}x"
@@ -90,13 +90,13 @@ $@::send_input_toggled_by_ime_and_space("@", "", "{Text}@", "")
 <+/::SendInput "{\}"
 
 ;Hyphen
-sc027::send_input_toggled_by_space("-", "{Text}+")
+sc027::send_input_toggled_by_space("-", "+")
 
 ;: or *
-<+sc028::send_input_toggled_by_ime_and_space(":", "*", ":", "{Text}*")
+<+sc028::send_input_toggled_by_space(":", "*")
 
 ;; or =
-<+sc027::send_input_toggled_by_ime_and_space(";", "=", "{Text};", "{Text}=")
+<+sc027::send_input_toggled_by_space(";", "=")
 
 ;Alt Tab
 sc07B & Tab::AltTab
