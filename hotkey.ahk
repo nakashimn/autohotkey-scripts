@@ -90,7 +90,7 @@ $@::send_input_toggled_by_space("@", "")
 <+/::SendInput "{\}"
 
 ;Hyphen
-sc027::send_input_toggled_by_space("-", "+")
+sc027::send_input_toggled_by_space("-", "{+}")
 
 ;: or *
 <+sc028::send_input_toggled_by_space(":", "*")
