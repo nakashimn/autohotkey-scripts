@@ -118,38 +118,40 @@ sc079::{
 ;===============================================================================
 ;SandS
 ;===============================================================================
-SandS_SpaceDown := 0
-SandS_AnyKeyPressed := 0
+global SandS_IsShift := false
+
 *Space::{
-  global SandS_SpaceDown
-  global SandS_AnyKeyPressed
-  SendInput "{RShift Down}"
-  if (SandS_SpaceDown == 1) {
-    return
-  }
-  SandS_SpaceDown := 1
-  SandS_SpaceDownTime := A_TickCount
-  SandS_AnyKeyPressed := 0
-  input_hook := InputHook("L1 V", "{LControl}{RControl}{LAlt}{RAlt}{LShift}{RShift}{LWin}{RWin}{AppsKey}{F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{F9}{F10}{F11}{F12}{Left}{Right}{Up}{Down}{Home}{End}{PgUp}{PgDn}{Del}{Ins}{BS}{Capslock}{Numlock}{PrintScreen}{Pause}")
-  input_hook.Start()
-  input_hook.Wait(0.2)
-  SandS_AnyKeyPressed := 1
-  return
+    global SandS_IsShift
+    if (SandS_IsShift) {
+        return
+    }
+
+    SandS_IsShift := true
+
+    ; RShiftを押し下げ
+    SendInput "{RShift Down}"
 }
 
+
 *Space Up::{
-  global SandS_SpaceDown
-  global SandS_AnyKeyPressed
-  SendInput "{RShift Up}"
-  SandS_SpaceDown := 0
-  if (SandS_AnyKeyPressed == 0) {
-    if GetKeyState("LControl", "P") {
-      SendInput "{sc029}"
-    } else {
-      SendInput "{Space}"
+    global SandS_IsShift
+
+    ; Shift解除
+    SendInput "{RShift Up}"
+    SandS_IsShift := false
+
+    ; LShift または RShift が物理的に押されている（"P"）場合は単打とみなさない
+    isShiftPressed := GetKeyState("LShift", "P") || GetKeyState("RShift", "P")
+
+    ; 直前のキーが Space かつ、物理的に Shift が押されていない場合のみ Space を出力
+    if (A_PriorKey == "Space" && !isShiftPressed) {
+        if GetKeyState("LControl", "P") {
+            SendInput "{sc029}"
+        } else {
+            SendInput "{Space}"
+        }
+        SendInput "{RControl}"
     }
-    Send "{RControl}"
-  }
 }
 
 ;===============================================================================
