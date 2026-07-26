@@ -132,7 +132,6 @@ global SandS_IsShift := false
     SendInput "{RShift Down}"
 }
 
-
 *Space Up::{
     global SandS_IsShift
 
