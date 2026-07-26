@@ -121,45 +121,45 @@ sc079::{
 global SandS_IsShift := false
 
 *Space::{
-    global SandS_IsShift
-    if (SandS_IsShift) {
-        return
-    }
+  global SandS_IsShift
+  if (SandS_IsShift) {
+    return
+  }
 
-    SandS_IsShift := true
+  SandS_IsShift := true
 
-; 物理LShiftが押されていない時だけAHK側でRShift Downを送る
-    if !GetKeyState("LShift", "P") {
-        SendInput "{RShift Down}"
-    }
+  ; 物理LShiftが押されていない時だけAHK側でRShift Downを送る
+  if !GetKeyState("LShift", "P") {
+    SendInput "{RShift Down}"
+  }
 }
 
 *Space Up::{
-    global SandS_IsShift
+  global SandS_IsShift
 
-    ; Shift解除
-    SendInput "{RShift Up}"
-    SandS_IsShift := false
+  ; Shift解除
+  SendInput "{RShift Up}"
+  SandS_IsShift := false
 
-    ; LShift が物理的に押されている（"P"）場合は単打とみなさない
-    isPhysLShift := GetKeyState("LShift", "P")
+  ; LShift が物理的に押されている（"P"）場合は単打とみなさない
+  isPhysLShift := GetKeyState("LShift", "P")
 
-    ; もし物理LShiftが押されたままSpaceだけが放された場合、
-    ; OSのModifierステートがスタックするのを防ぐため、明示的にLShift Up（またはShift全体のクリア）を送る
-    if isPhysLShift {
-        ; 物理的にLShiftが押し込まれていても、キーボードコントローラの状態不整合をリセットする
-        SendInput "{LShift Up}"
+  ; もし物理LShiftが押されたままSpaceだけが放された場合、
+  ; OSのModifierステートがスタックするのを防ぐため、明示的にLShift Up（またはShift全体のクリア）を送る
+  if isPhysLShift {
+    ; 物理的にLShiftが押し込まれていても、キーボードコントローラの状態不整合をリセットする
+    SendInput "{LShift Up}"
+  }
+
+  ; 直前のキーが Space かつ、物理的に Shift が押されていない場合のみ Space を出力
+  if (A_PriorKey == "Space" && !isPhysLShift) {
+    if GetKeyState("LControl", "P") {
+      SendInput "{sc029}"
+    } else {
+      SendInput "{Space}"
     }
-
-    ; 直前のキーが Space かつ、物理的に Shift が押されていない場合のみ Space を出力
-    if (A_PriorKey == "Space" && !isPhysLShift) {
-        if GetKeyState("LControl", "P") {
-            SendInput "{sc029}"
-        } else {
-            SendInput "{Space}"
-        }
-        SendInput "{RControl}"
-    }
+    SendInput "{RControl}"
+  }
 }
 
 ;===============================================================================
